@@ -1,7 +1,6 @@
-from set_functions import main_set, price_set, sale_set
-from rate_functions import make_rate
+from rating.set_functions import main_set, price_set, sale_set
+from rating.rate_functions import make_rate
 import pandas as pd
-import numpy as np
 
 company_columns = ['verification',
                    'days_online',
