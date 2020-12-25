@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css'
 import React from 'react'
 import styled from 'styled-components'
-import {Button, Form} from 'antd'
+import {Button, Form, message} from 'antd'
 import SliderInput from './components/sliderInput'
 
 const Container = styled.div`
@@ -37,8 +37,8 @@ const data = {
 
 const App = () => {
 
-    const onFinish = (args)=>{
-        console.log([args])
+    const onFinish = ()=>{
+        message.error('Бэк еще не готов!')
     }
 
     return (
@@ -155,20 +155,6 @@ const App = () => {
                     Сохранить
                 </Button>
             </Form>
-            {/*
-verification: 1.5,
-part_orders_of_online: 1.0,
-own: 1.1,
-median_delivery_time: -1.0,
-mean_product_price: -1.0,
-part_good_order: 1.0
-mean_feedback: 1.0,
-mean_call: 1.0,
-mean_cost_delivery: -1.0,
-count_products: 1.0,
-median_sale: 1.0,
-part_orders_of_views: 1.0,
- */}
         </Container>
     );
 }
