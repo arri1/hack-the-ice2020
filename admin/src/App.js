@@ -44,144 +44,178 @@ const data = {
 
 const App = () => {
     const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/').then(data => {
-            console.log([data])
-            //setData()
-        }).catch((e) => {
-            console.log(e.message)
+        axios.get('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/')
+            .then(({data}) => {
+                setLoading(false)
+                console.log(data)
+                setData(data)
+            }).catch((e) => {
             message.error('Что то пошло не так при загрузке данных')
         })
     }, [])
 
     const onFinish = (args) => {
+        //setLoading(true)
         console.log(args)
-        axios.post('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/', args)
+   /*     axios.put('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/', {body: args}, {})
             .then(() => {
+                setLoading(false)
                 message.success('изменено!')
             })
             .catch((e) => {
+                setLoading(false)
                 message.error('что то пошло не так')
-            })
+            })*/
     }
 
     return (
         <Container>
             <Padding>
                 <Title>Настройки</Title>
-                <Form
-                    style={{marginTop: 20, display: 'flex', flexDirection: 'column'}}
-                    layout={'vertical'}
-                    onFinish={onFinish}
-                >
-                    <Form.Item
-                        label={'verification'}
-                        style={{display: 'flex', flexDirection: 'column'}}
-                        name={'verification'}
-                        initialValue={data ? data.verification : 0}
+                {!loading && data ?
+                    <Form
+                        style={{marginTop: 20, display: 'flex', flexDirection: 'column'}}
+                        layout={'vertical'}
+                        onFinish={onFinish}
                     >
-                        <SliderInput
-                            max={2}
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'part_orders_of_online'}
-                        name={'part_orders_of_online'}
-                        initialValue={data ? data.part_orders_of_online : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'own'}
-                        name={'own'}
-                        initialValue={data ? data.own : 0}
-                    >
-                        <SliderInput
-                            max={2}
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'median_delivery_time'}
-                        name={'median_delivery_time'}
-                        initialValue={data ? data.median_delivery_time : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'mean_product_price'}
-                        name={'mean_product_price'}
-                        initialValue={data ? data.mean_product_price : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'part_good_order'}
-                        name={'part_good_order'}
-                        initialValue={data ? data.mean_product_price : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'mean_feedback'}
-                        name={'mean_feedback'}
-                        initialValue={data ? data.mean_feedback : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'mean_call'}
-                        name={'mean_call'}
-                        initialValue={data ? data.mean_call : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'mean_cost_delivery'}
-                        name={'mean_cost_delivery'}
-                        initialValue={data ? data.mean_cost_delivery : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'count_products'}
-                        name={'count_products'}
-                        initialValue={data ? data.count_products : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'median_sale'}
-                        name={'median_sale'}
-                        initialValue={data ? data.median_sale : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        label={'part_orders_of_views'}
-                        name={'part_orders_of_views'}
-                        initialValue={data ? data.part_orders_of_views : 0}
-                    >
-                        <SliderInput
-                        />
-                    </Form.Item>
-                    <Button
-                        style={{marginTop: 20}}
-                        type={'primary'}
-                        htmlType={'submit'}
-                    >
-                        Сохранить
-                    </Button>
-                </Form>
+                        <Form.Item
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                            label={'verification'}
+                            style={{display: 'flex', flexDirection: 'column'}}
+                            name={'verification'}
+
+                        >
+                            <SliderInput
+                                value={data.verification}
+                                max={2}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'part_orders_of_online'}
+                            name={'part_orders_of_online'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.part_orders_of_online : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'own'}
+                            name={'own'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.own : 0}
+                                max={2}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'median_delivery_time'}
+                            name={'median_delivery_time'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.median_delivery_time : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'mean_product_price'}
+                            name={'mean_product_price'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.mean_product_price : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'part_good_order'}
+                            name={'part_good_order'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.mean_product_price : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'mean_feedback'}
+                            name={'mean_feedback'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.mean_feedback : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'mean_call'}
+                            name={'mean_call'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.mean_call : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'mean_cost_delivery'}
+                            name={'mean_cost_delivery'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.mean_cost_delivery : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'count_products'}
+                            name={'count_products'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.count_products : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'median_sale'}
+                            name={'median_sale'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.median_sale : 0}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            label={'part_orders_of_views'}
+                            name={'part_orders_of_views'}
+                            validateStatus={loading ? 'validating' : null}
+                            hasFeedback
+                        >
+                            <SliderInput
+                                initialValue={data ? data.part_orders_of_views : 0}
+                            />
+                        </Form.Item>
+                        <Button
+                            style={{marginTop: 20}}
+                            type={'primary'}
+                            htmlType={'submit'}
+                            loading={loading}
+                        >
+                            Сохранить
+                        </Button>
+                    </Form>
+                    : null
+                }
             </Padding>
         </Container>
     );

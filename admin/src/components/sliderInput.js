@@ -9,8 +9,7 @@ const SliderInput = ({value,min=-1,max=1}) => {
     useEffect(()=>{
         setValue(value)
     },[])
-
-    const [currentValue,setValue]=useState()
+    const [currentValue,setValue]=useState(0)
     return (
         <SliderContainer>
             <Slider
