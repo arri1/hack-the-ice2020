@@ -59,6 +59,19 @@ def sale_response(companies):
         d[list(line['company'])[0]] = line_d
     return d
 
+def make_price_dia(companies, products):
+    d = {}
+    for _id in companies['id']:
+        name = list(companies[companies['id'] == _id]['company'])[0]
+        d[name] = list(products[products['id_company'] == _id]['price'])
+    return d
+
+def make_sale_dia(companies, products):
+    d = {}
+    for _id in companies['id']:
+        name = list(companies[companies['id'] == _id]['company'])[0]
+        d[name] = list(products[products['id_company'] == _id]['sale'])
+    return d
 
 def make_response(category_id, dict_coef):
     df_companies = pd.read_excel('db/companies.xlsx', engine='openpyxl')
@@ -73,6 +86,7 @@ def make_response(category_id, dict_coef):
     df_companies['rate'] = make_rate(df_companies, dict_coef)
     response = {'companies': company_response(df_companies),
                 'prices': price_response(df_companies),
-                'sales': sale_response(df_companies)}
-    print(df_companies[df_companies['id'] == 33])
+                'sales': sale_response(df_companies),
+                'price_dia': make_price_dia(df_companies, df_products),
+                'sale_dia': make_sale_dia(df_companies, df_products)}
     return response
