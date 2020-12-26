@@ -5,32 +5,30 @@ import {InputNumber, Slider} from 'antd'
 const SliderContainer = styled.div`
   display: flex;
 `
-const SliderInput = ({value,min=-1,max=1}) => {
-    useEffect(()=>{
-        setValue(value)
-    },[])
-    const [currentValue,setValue]=useState(0)
+const SliderInput = ({min=-1,max=1,initialValue,setArray}) => {
+    const [value,setValue]=useState(initialValue)
     return (
         <SliderContainer>
             <Slider
                 style={{width:'100%',marginRight: 20}}
                 min={min}
                 max={max}
-                value={currentValue}
+                value={value}
                 step={0.01}
                 onChange={(e) => {
-                    value=e
                     setValue(e)
+                    setArray(e)
+
                 }}
             />
             <InputNumber
                 min={min}
                 max={max}
-                value={currentValue}
+                value={value}
                 step={0.01}
                 onChange={(e) => {
-                    value=e
                     setValue(e)
+                    setArray(e)
                 }}
             />
         </SliderContainer>

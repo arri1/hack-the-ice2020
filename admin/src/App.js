@@ -25,23 +25,6 @@ const Title = styled.div`
   font-weight: bold;
 `
 
-/*
-const data = {
-    verification: 1.5,
-    part_orders_of_online: 1.0,
-    own: 1.1,
-    median_delivery_time: -1.0,
-    mean_product_price: -1.0,
-    part_good_order: 1.0,
-    mean_feedback: 1.0,
-    mean_call: 1.0,
-    mean_cost_delivery: -1.0,
-    count_products: 1.0,
-    median_sale: 1.0,
-    part_orders_of_views: 1.0,
-}
-*/
-
 const App = () => {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -57,10 +40,9 @@ const App = () => {
         })
     }, [])
 
-    const onFinish = (args) => {
-        //setLoading(true)
-        console.log(args)
-   /*     axios.put('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/', {body: args}, {})
+    const onFinish = () => {
+        setLoading(true)
+        axios.put('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/',  data, {})
             .then(() => {
                 setLoading(false)
                 message.success('изменено!')
@@ -68,14 +50,14 @@ const App = () => {
             .catch((e) => {
                 setLoading(false)
                 message.error('что то пошло не так')
-            })*/
+            })
     }
 
     return (
         <Container>
             <Padding>
                 <Title>Настройки</Title>
-                {!loading && data ?
+                { data ?
                     <Form
                         style={{marginTop: 20, display: 'flex', flexDirection: 'column'}}
                         layout={'vertical'}
@@ -90,8 +72,14 @@ const App = () => {
 
                         >
                             <SliderInput
-                                value={data.verification}
+                                initialValue={data.verification}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.verification = e
+                                    setData(newData)
+                                }}
                                 max={2}
+                                min={-2}
                             />
                         </Form.Item>
                         <Form.Item
@@ -101,7 +89,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.part_orders_of_online : 0}
+                                initialValue={data.part_orders_of_online}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.part_orders_of_online = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -111,7 +104,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.own : 0}
+                                initialValue={data.own}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.own = e
+                                    setData(newData)
+                                }}
                                 max={2}
                             />
                         </Form.Item>
@@ -122,7 +120,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.median_delivery_time : 0}
+                                initialValue={data.median_delivery_time}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.median_delivery_time = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -132,7 +135,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.mean_product_price : 0}
+                                initialValue={data.mean_product_price}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.mean_product_price = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -142,7 +150,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.mean_product_price : 0}
+                                initialValue={data.mean_product_price}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.mean_product_price = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -152,7 +165,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.mean_feedback : 0}
+                                initialValue={data.mean_feedback}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.mean_feedback = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -162,7 +180,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.mean_call : 0}
+                                initialValue={data.mean_call}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.mean_call = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -173,6 +196,11 @@ const App = () => {
                         >
                             <SliderInput
                                 initialValue={data ? data.mean_cost_delivery : 0}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.mean_cost_delivery = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -182,7 +210,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.count_products : 0}
+                                initialValue={data.count_products}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.count_products = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -192,7 +225,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.median_sale : 0}
+                                initialValue={data.median_sale}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.median_sale = e
+                                    setData(newData)
+                                }}
                             />
                         </Form.Item>
                         <Form.Item
@@ -202,7 +240,12 @@ const App = () => {
                             hasFeedback
                         >
                             <SliderInput
-                                initialValue={data ? data.part_orders_of_views : 0}
+                                setArray={(e) => {
+                                    const newData = {...data}
+                                    newData.part_orders_of_views = e
+                                    setData(newData)
+                                }}
+                                initialValue={data.part_orders_of_views}
                             />
                         </Form.Item>
                         <Button
