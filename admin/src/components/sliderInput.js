@@ -14,7 +14,7 @@ const SliderInput = ({value,min=-1,max=1}) => {
     return (
         <SliderContainer>
             <Slider
-                style={{width: '100%', marginRight: 20}}
+                style={{width:'100%',marginRight: 20}}
                 min={min}
                 max={max}
                 value={currentValue}

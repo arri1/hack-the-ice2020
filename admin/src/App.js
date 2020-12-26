@@ -1,13 +1,20 @@
 import 'antd/dist/antd.css'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import {Button, Form, message} from 'antd'
+import axios from 'axios'
 import SliderInput from './components/sliderInput'
 
 const Container = styled.div`
+  width: 100vw;
+  display: flex;
+  height: 100%;
+`
+const Padding = styled.div`
   display: flex;
   flex-direction: column;
   padding: 40px 80px;
+  width: 100%;
   @media screen and (max-width: 800px){
     padding: 15px;
   }
@@ -18,8 +25,7 @@ const Title = styled.div`
   font-weight: bold;
 `
 
-
-
+/*
 const data = {
     verification: 1.5,
     part_orders_of_online: 1.0,
@@ -34,127 +40,149 @@ const data = {
     median_sale: 1.0,
     part_orders_of_views: 1.0,
 }
+*/
 
 const App = () => {
+    const [data, setData] = useState(null)
 
-    const onFinish = ()=>{
-        message.error('Бэк еще не готов!')
+    useEffect(() => {
+        axios.get('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/').then(data => {
+            console.log([data])
+            //setData()
+        }).catch((e) => {
+            console.log(e.message)
+            message.error('Что то пошло не так при загрузке данных')
+        })
+    }, [])
+
+    const onFinish = (args) => {
+        console.log(args)
+        axios.post('https://hack-the-ice2020-python-back.herokuapp.com/api/settings/', args)
+            .then(() => {
+                message.success('изменено!')
+            })
+            .catch((e) => {
+                message.error('что то пошло не так')
+            })
     }
 
     return (
         <Container>
-            <Title>Настройки</Title>
-            <Form
-                style={{marginTop: 20}}
-                layout={'vertical'}
-                onFinish={onFinish}
-            >
-                <Form.Item
-                    label={'verification'}
-                    name={'verification'}
-                    initialValue={data ? data.verification : 0}
+            <Padding>
+                <Title>Настройки</Title>
+                <Form
+                    style={{marginTop: 20, display: 'flex', flexDirection: 'column'}}
+                    layout={'vertical'}
+                    onFinish={onFinish}
                 >
-                    <SliderInput
-                        max={2}
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'part_orders_of_online'}
-                    name={'part_orders_of_online'}
-                    initialValue={data ? data.part_orders_of_online : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'own'}
-                    name={'own'}
-                    initialValue={data ? data.own : 0}
-                >
-                    <SliderInput
-                        max={2}
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'median_delivery_time'}
-                    name={'median_delivery_time'}
-                    initialValue={data ? data.median_delivery_time : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'mean_product_price'}
-                    name={'mean_product_price'}
-                    initialValue={data ? data.mean_product_price : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'part_good_order'}
-                    name={'part_good_order'}
-                    initialValue={data ? data.mean_product_price : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'mean_feedback'}
-                    name={'mean_feedback'}
-                    initialValue={data ? data.mean_feedback : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'mean_call'}
-                    name={'mean_call'}
-                    initialValue={data ? data.mean_call : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'mean_cost_delivery'}
-                    name={'mean_cost_delivery'}
-                    initialValue={data ? data.mean_cost_delivery : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'count_products'}
-                    name={'count_products'}
-                    initialValue={data ? data.count_products : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'median_sale'}
-                    name={'median_sale'}
-                    initialValue={data ? data.median_sale : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Form.Item
-                    label={'part_orders_of_views'}
-                    name={'part_orders_of_views'}
-                    initialValue={data ? data.part_orders_of_views : 0}
-                >
-                    <SliderInput
-                    />
-                </Form.Item>
-                <Button
-                    style={{marginTop:20}}
-                    type={'primary'}
-                    htmlType={'submit'}
-                >
-                    Сохранить
-                </Button>
-            </Form>
+                    <Form.Item
+                        label={'verification'}
+                        style={{display: 'flex', flexDirection: 'column'}}
+                        name={'verification'}
+                        initialValue={data ? data.verification : 0}
+                    >
+                        <SliderInput
+                            max={2}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'part_orders_of_online'}
+                        name={'part_orders_of_online'}
+                        initialValue={data ? data.part_orders_of_online : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'own'}
+                        name={'own'}
+                        initialValue={data ? data.own : 0}
+                    >
+                        <SliderInput
+                            max={2}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'median_delivery_time'}
+                        name={'median_delivery_time'}
+                        initialValue={data ? data.median_delivery_time : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'mean_product_price'}
+                        name={'mean_product_price'}
+                        initialValue={data ? data.mean_product_price : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'part_good_order'}
+                        name={'part_good_order'}
+                        initialValue={data ? data.mean_product_price : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'mean_feedback'}
+                        name={'mean_feedback'}
+                        initialValue={data ? data.mean_feedback : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'mean_call'}
+                        name={'mean_call'}
+                        initialValue={data ? data.mean_call : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'mean_cost_delivery'}
+                        name={'mean_cost_delivery'}
+                        initialValue={data ? data.mean_cost_delivery : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'count_products'}
+                        name={'count_products'}
+                        initialValue={data ? data.count_products : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'median_sale'}
+                        name={'median_sale'}
+                        initialValue={data ? data.median_sale : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        label={'part_orders_of_views'}
+                        name={'part_orders_of_views'}
+                        initialValue={data ? data.part_orders_of_views : 0}
+                    >
+                        <SliderInput
+                        />
+                    </Form.Item>
+                    <Button
+                        style={{marginTop: 20}}
+                        type={'primary'}
+                        htmlType={'submit'}
+                    >
+                        Сохранить
+                    </Button>
+                </Form>
+            </Padding>
         </Container>
     );
 }
