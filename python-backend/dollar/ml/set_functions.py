@@ -1,6 +1,4 @@
-import pandas as pd
 import numpy as np
-from catboost import CatBoostRegressor
 
 
 def set_median_time_delivery(company, orders, products):
