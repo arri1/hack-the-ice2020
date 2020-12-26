@@ -17,7 +17,7 @@
       "part_good_order": 0.0,
       "part_orders_of_online": 0.0,
       "part_orders_of_views": 0.0,
-      "rate": 0.8231706880387321
+      "rate": 0.548780458692488
     },
     "\u0421\u0443\u0440\u0433\u0443\u0442\u043d\u0435\u0444\u0442\u0435\u0433\u0430\u0437": {
       "verification": 0,
@@ -36,7 +36,7 @@
       "part_good_order": 0.5238095238095238,
       "part_orders_of_online": 0.7046979865771812,
       "part_orders_of_views": 0.002037371209034286,
-      "rate": 18.410234881023438
+      "rate": 16.747552773740612
     },
     "X5 Retail Group": {
       "verification": 0,
@@ -74,7 +74,7 @@
       "part_good_order": 0.5188679245283019,
       "part_orders_of_online": 0.29362880886426596,
       "part_orders_of_views": 0.0020633808300241376,
-      "rate": 25.12942226036666
+      "rate": 16.752948173577774
     },
     "\u041d\u041b\u041c\u041a": {
       "verification": 0,
@@ -112,7 +112,7 @@
       "part_good_order": 0.53,
       "part_orders_of_online": 1.8867924528301887,
       "part_orders_of_views": 0.0017068632973185178,
-      "rate": 27.80029503936428
+      "rate": 16.859639269394627
     },
     "\u041c.\u0412\u0438\u0434\u0435\u043e-\u042d\u043b\u044c\u0434\u043e\u0440\u0430\u0434\u043e": {
       "verification": 0,
@@ -131,7 +131,7 @@
       "part_good_order": 0.5688073394495413,
       "part_orders_of_online": 0.5422885572139303,
       "part_orders_of_views": 0.0018024274894996198,
-      "rate": 18.56422721352448
+      "rate": 16.88754580328701
     },
     "\u0410\u043b\u044c\u0444\u0430-\u0431\u0430\u043d\u043a ": {
       "verification": 0,
@@ -150,7 +150,7 @@
       "part_good_order": 0.47959183673469385,
       "part_orders_of_online": 0.43946188340807174,
       "part_orders_of_views": 0.0017544173723124295,
-      "rate": 18.65305025483502
+      "rate": 16.96829402266023
     },
     "\u0422\u0440\u0430\u043d\u0441\u043c\u0430\u0448\u0445\u043e\u043b\u0434\u0438\u043d\u0433": {
       "verification": 0,
@@ -169,7 +169,7 @@
       "part_good_order": 0.48623853211009177,
       "part_orders_of_online": 0.3224852071005917,
       "part_orders_of_views": 0.0021273273742144503,
-      "rate": 18.496765639450402
+      "rate": 16.826217099583307
     },
     "\u041f\u0440\u043e\u0442\u0435\u043a": {
       "verification": 1,
@@ -188,7 +188,7 @@
       "part_good_order": 0.4375,
       "part_orders_of_online": 1.1566265060240963,
       "part_orders_of_views": 0.0017656146546016333,
-      "rate": 26.104759641274562
+      "rate": 17.403173094183042
     },
     "\u041f\u043e\u043b\u044e\u0441": {
       "verification": 0,
@@ -207,7 +207,7 @@
       "part_good_order": 0.5514018691588785,
       "part_orders_of_online": 0.3282208588957055,
       "part_orders_of_views": 0.0018397524071526823,
-      "rate": 18.009222370219636
+      "rate": 16.382995945737154
     },
     "\u0415\u0432\u0440\u043e\u0441\u0438\u0431\u044d\u043d\u0435\u0440\u0433\u043e": {
       "verification": 0,
@@ -245,7 +245,7 @@
       "part_good_order": 0.4387755102040816,
       "part_orders_of_online": 0.30914826498422715,
       "part_orders_of_views": 0.0017430278884462151,
-      "rate": 25.41134300484495
+      "rate": 16.940895336563305
     },
     "\u0421\u041d\u0421": {
       "verification": 1,
@@ -264,7 +264,7 @@
       "part_good_order": 0.5446428571428571,
       "part_orders_of_online": 1.6231884057971016,
       "part_orders_of_views": 0.0018246391450262292,
-      "rate": 24.632820962029278
+      "rate": 16.421880641352853
     },
     "\u0421\u0438\u043d\u0430\u0440\u0430": {
       "verification": 1,
@@ -283,7 +283,7 @@
       "part_good_order": 0.5,
       "part_orders_of_online": 0.2934131736526946,
       "part_orders_of_views": 0.001739933243377601,
-      "rate": 27.632409181652672
+      "rate": 16.75789026472092
     },
     "\u0420\u0435\u043d\u0435\u0439\u0441\u0441\u0430\u043d\u0441 \u041a\u043e\u043d\u0441\u0442\u0440\u0430\u043a\u0448\u043d": {
       "verification": 1,
@@ -302,7 +302,7 @@
       "part_good_order": 0.5339805825242718,
       "part_orders_of_online": 0.42738589211618255,
       "part_orders_of_views": 0.0019142490753991117,
-      "rate": 28.385498091528543
+      "rate": 17.214307785857816
     },
     "\u041c\u043e\u0441\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u043a\u0440\u0435\u0434\u0438\u0442\u043d\u044b\u0439 \u0431\u0430\u043d\u043a ": {
       "verification": 1,
@@ -321,7 +321,7 @@
       "part_good_order": 0.32710280373831774,
       "part_orders_of_online": 0.4331983805668016,
       "part_orders_of_views": 0.0021433006830519,
-      "rate": 25.165180617967128
+      "rate": 16.77678707864475
     },
     "Fix Price": {
       "verification": 1,
@@ -340,7 +340,7 @@
       "part_good_order": 0.4489795918367347,
       "part_orders_of_online": 2.1777777777777776,
       "part_orders_of_views": 0.0018145123960821344,
-      "rate": 28.133740807306445
+      "rate": 17.061727613602
     },
     "\u041d\u043e\u0432\u043e\u0448\u0430\u0445\u0442\u0438\u043d\u0441\u043a\u0438\u0439 \u0437\u0430\u0432\u043e\u0434 \u043d\u0435\u0444\u0442\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432": {
       "verification": 0,
@@ -378,7 +378,7 @@
       "part_good_order": 0.47474747474747475,
       "part_orders_of_online": 0.4604651162790698,
       "part_orders_of_views": 0.002361077987121393,
-      "rate": 18.520633202741546
+      "rate": 16.847914884393433
     },
     "\u0412\u0435\u043b\u0435\u0441\u0441\u0442\u0440\u043e\u0439": {
       "verification": 0,
@@ -397,7 +397,7 @@
       "part_good_order": 0.5818181818181818,
       "part_orders_of_online": 0.3536977491961415,
       "part_orders_of_views": 0.001895277313530557,
-      "rate": 18.700329974312787
+      "rate": 17.01127558582184
     },
     "\u0410\u0432\u0442\u043e\u043c\u0438\u0440": {
       "verification": 1,
@@ -416,7 +416,7 @@
       "part_good_order": 0.5121951219512195,
       "part_orders_of_online": 0.34309623430962344,
       "part_orders_of_views": 0.0013411622315631082,
-      "rate": 28.517872016867916
+      "rate": 17.294534407275616
     },
     "\u0421\u0432\u0435\u0442\u043e\u0444\u043e\u0440": {
       "verification": 0,
@@ -454,7 +454,7 @@
       "part_good_order": 0.5533980582524272,
       "part_orders_of_online": 1.0510204081632653,
       "part_orders_of_views": 0.0020277985588849075,
-      "rate": 28.328778911303267
+      "rate": 17.179932525115223
     },
     "\u042d\u0424\u041a\u041e": {
       "verification": 1,
@@ -473,7 +473,7 @@
       "part_good_order": 0.5980392156862745,
       "part_orders_of_online": 0.6181818181818182,
       "part_orders_of_views": 0.0016836406252579107,
-      "rate": 27.752192689944838
+      "rate": 16.83048633035254
     },
     "\u0413\u0440\u0443\u043f\u043f\u0430 \u0427\u0435\u0440\u043a\u0438\u0437\u043e\u0432\u043e": {
       "verification": 1,
@@ -492,7 +492,7 @@
       "part_good_order": 0.5480769230769231,
       "part_orders_of_online": 0.37681159420289856,
       "part_orders_of_views": 0.001428669551480184,
-      "rate": 25.429884037939768
+      "rate": 16.95325602529318
     },
     "\u041c\u0438\u0440\u0430\u0442\u043e\u0440\u0433": {
       "verification": 0,
@@ -511,7 +511,7 @@
       "part_good_order": 0.53125,
       "part_orders_of_online": 0.5363128491620112,
       "part_orders_of_views": 0.00173103970572325,
-      "rate": 18.287708347783738
+      "rate": 16.636165016249976
     },
     "\u0421\u043b\u0430\u0434\u043a\u0430\u044f \u0436\u0438\u0437\u043d\u044c": {
       "verification": 0,
@@ -530,7 +530,7 @@
       "part_good_order": 0.49056603773584906,
       "part_orders_of_online": 0.7851851851851852,
       "part_orders_of_views": 0.0023401108241163874,
-      "rate": 19.114867898486548
+      "rate": 17.38812824416162
     },
     "\u0410\u043a\u0440\u043e\u043d": {
       "verification": 0,
@@ -549,7 +549,7 @@
       "part_good_order": 0.4774774774774775,
       "part_orders_of_online": 0.375,
       "part_orders_of_views": 0.0021879250192182605,
-      "rate": 18.781448758007105
+      "rate": 17.085019934634854
     },
     "\u0413\u041a \u0424\u0421\u041a": {
       "verification": 0,

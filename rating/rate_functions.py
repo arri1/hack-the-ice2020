@@ -14,7 +14,8 @@ def rate_meadian_time_delivery(df, dict_coef):
 
 
 def rate_mean_product_price(df, dict_coef):
-    df['rate'] += df['mean_product_price'] * dict_coef['mean_product_price'] / 1000
+    df['rate'] += df['mean_product_price'] * dict_coef[
+        'mean_product_price'] / 1000
     return df
 
 
@@ -109,13 +110,21 @@ def rate_own(df, dict_coef):
     return df
 
 
-def make_rate(company, dict_coef):
+dict_chars = {'verification': rate_verification,
+              'days_online': rate_part_orders_of_online, 'own': rate_own,
+              'median_delivery_time': rate_meadian_time_delivery,
+              'mean_product_price': rate_mean_product_price,
+              'good_orders': rate_part_goods,
+              'mean_feedback': rate_mean_feedback, 'mean_call': rate_mean_call,
+              'mean_cost_delivery': rate_mean_cost_delivery,
+              'count_products': rate_count_products,
+              'median_sale': rate_median_sale,
+              'sum_views': rate_part_orders_of_views}
+
+
+def make_rate(company, dict_coef, chosen_chars):
     company['rate'] = np.zeros(len(company))
-    funcs = [rate_meadian_time_delivery, rate_mean_product_price,
-             rate_part_goods, rate_mean_feedback, rate_mean_call,
-             rate_mean_cost_delivery, rate_part_orders_of_online,
-             rate_count_products, rate_median_sale, rate_part_orders_of_views,
-             rate_verification, rate_own]
-    for func in funcs:
-        company = func(company, dict_coef)
+    for choice in chosen_chars:
+        if choice in dict_chars:
+            company = dict_chars[choice](company, dict_coef)
     return company['rate']
