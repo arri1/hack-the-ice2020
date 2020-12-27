@@ -1,13 +1,6 @@
-## Содержание
+# Super Rating System (SRS)
 
-1. [Описание](#Super-Rating-System-SRS))
-2. [Технологии](#Технологии)
-3. [Папка admin](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
-4. [Папка front-backend](<#Папка-[front-backend](https://github.com/arri1/hack-the-ice2020/tree/master/front-backend).>)
-5. [Папка admin](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
-6. [Папка [admin]](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
-
-## Super Rating System (SRS)
+---
 
 "Rating System for AЭБ" помогает юр. лицам, которые хотят найти проверенных партнеров, тем, что дает возможность сортировать другие компании на платформе АЭБ по их усмотрению, а также компании могут получить рекомендации по сотрудничеству с помощью веб- платформы и алгоритмов
 
@@ -26,26 +19,26 @@
 -   [mongodb](): Version 4.4
 -   [axios](): Version 0.21.1
 
-## Папка [admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).
+## Папка [admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin)
 
 Содержит инструменты для модифицирования коэффициентов при расчете рейтинга.
 
-## Папка [front-backend](https://github.com/arri1/hack-the-ice2020/tree/master/front-backend).
+## Папка [front-backend](https://github.com/arri1/hack-the-ice2020/tree/master/front-backend)
 
-Содержит файлы сервера проекта
+Содержит файлы сервера проекта.
 
-## Папка [front](https://github.com/arri1/hack-the-ice2020/tree/master/front).
+## Папка [front](https://github.com/arri1/hack-the-ice2020/tree/master/front)
 
-Содержит исходный код проекта
+Содержит исходный код проекта.
 
-## Папка [marketplace-backend](https://github.com/arri1/hack-the-ice2020/tree/master/marketplace-backend).
+## Папка [marketplace-backend](https://github.com/arri1/hack-the-ice2020/tree/master/marketplace-backend)
 
-Содержит файлы сервера маркетплейса
+Содержит файлы сервера маркетплейса.
 
-## Папка [python-backend](https://github.com/arri1/hack-the-ice2020/tree/master/python-backend).
+## Папка [python-backend](https://github.com/arri1/hack-the-ice2020/tree/master/python-backend)
 
-Содержит файлы сервера на питоне
+Содержит файлы сервера на питоне.
 
-## Папка [rating](https://github.com/arri1/hack-the-ice2020/tree/master/rating).
+## Папка [rating](https://github.com/arri1/hack-the-ice2020/tree/master/rating)
 
-Содержит
+Содержит базу данных для рейтингования.
