@@ -1,12 +1,13 @@
-## Table of Contents
+## Содержание
 
-1. [Содержание](#Super-Rating-System-SRS))
+1. [Описание](#Super-Rating-System-SRS))
 2. [Технологии](#Технологии)
-3. [Папка [admin]](#Папка-[admin])
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+3. [Папка admin](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
+4. [Папка front-backend](<#Папка-[front-backend](https://github.com/arri1/hack-the-ice2020/tree/master/front-backend).>)
+5. [Папка admin](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
+6. [Папка [admin]](<#Папка-[admin](https://github.com/arri1/hack-the-ice2020/tree/master/admin).>)
 
-# Super Rating System (SRS)
+## Super Rating System (SRS)
 
 "Rating System for AЭБ" помогает юр. лицам, которые хотят найти проверенных партнеров, тем, что дает возможность сортировать другие компании на платформе АЭБ по их усмотрению, а также компании могут получить рекомендации по сотрудничеству с помощью веб- платформы и алгоритмов
 
