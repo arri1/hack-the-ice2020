@@ -14,14 +14,7 @@ const Padding = styled.div`
 
 const App = () => {
     return (
-        <Container>
-            <Padding>
-                <img
-                    src={'/images/banner.png'}
-                    alt={'banner'}
-                />
-            </Padding>
-        </Container>
+        <img style={{width:'100%'}} src={'/images/market.png'} alt={'qwe'}/>
     );
 }
 
